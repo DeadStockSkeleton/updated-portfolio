@@ -52,8 +52,9 @@ body{
 
 .section{
     width: 100%;
-    height: 90%;
+    height: 100%;
     padding: 25px;
+    overflow-x: hidden;
 }
 .text{
     animation: animate 5s linear infinite;
@@ -132,4 +133,60 @@ transform: translate(-50%,-50%);
   }
   .underline{
       opacity: 1;
+  }
+
+  .underline {
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(to right, #0e0e0e, #0e0e0e);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    animation: underline 2s ease-in-out 2s forwards;
+    /* remove infinite if you want only once */
+    text-align: center;
+  }
+  
+  @keyframes underline {
+    to {
+      background-size: 100% 2px;
+    }
+  }
+
+  .prev, .next{
+      position: relative;
+      top: 400px;
+      font-size: 25px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+
+  .card{
+      border: none;
+  }
+
+  a{
+      cursor: pointer;
+  }
+
+ .m-2{
+     position: relative;
+     top: 25vh;
+     left: 25vw;
+     font-size: 25px;
+ }
+
+ @media only screen and (max-width: 600px) {
+    body {
+      display: block;
+      overflow: scroll;
+    }
+    .nav{
+        position: fixed;
+        width: 100%;
+        display: flex;
+    }
+
   }
